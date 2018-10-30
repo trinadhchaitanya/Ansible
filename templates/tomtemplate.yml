@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: yes
+  vars:
+    - myname: chaitu playbooks
+  tasks:
+    - name: create a file with static output
+      copy:
+        src: hello.txt
+        dest: /home/ansible/hello
+    - name: create a file with dynamic content
+      template:
+        src: message.j2
+        dest: /home/ansible/hello

@@ -1,0 +1,17 @@
+# ansible -m ping all
+# play1
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: execute ansible ping on hosts
+    ping:
+- hosts: all
+  become: yes
+  tasks:
+  - name: update packages on hosts
+    apt:
+      name: tree
+      update_cache: yes
+
+
